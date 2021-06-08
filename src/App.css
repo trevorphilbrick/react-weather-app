@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    137deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(2, 178, 232, 1) 89%,
+    rgba(255, 255, 0, 1) 100%
+  );
+  height: 100vh;
+  color: white;
+}
+body p {
+  font-size: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+  padding: 2em;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.current-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+.current-weather h1 {
+  margin-left: 1.5em;
+}
+.current-weather-sections {
+  display: flex;
+}
+.current-weather-sections > * {
+  margin: 3em;
+}
+.current-weather-sections > div:last-of-type {
+  border-left: 1px ridge white;
+  padding: 1em;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.current-temp {
+  font-size: 8rem;
+}
+.future-container {
+  width: 30%;
+  margin-top: 3em;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.future-container h1 {
+  margin-bottom: 1em;
+}
+.tomorrow-container {
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hourly-temp {
+  margin-left: 3em;
+}
+.hourly-temps {
+  display: flex;
+  margin-top: 3em;
+}
+.hourly-temps > * {
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px white ridge;
 }
 
-.App-link {
-  color: #61dafb;
+.hourly-temps > div:first-of-type {
+  border-left: none;
+}
+.temp {
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tomorrow-container,
+.day-after-container {
+  line-height: 1.5em;
+}
+
+.current-weather {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding-top: 1.5em;
+  border-radius: 5px;
+}
+
+.tomorrow-container,
+.day-after-container {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 1.5em;
+  border-radius: 5px;
 }
