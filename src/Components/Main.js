@@ -33,7 +33,6 @@ class Main extends Component {
     }
 
     const forecast = `http://api.weatherapi.com/v1/forecast.json?key=b4b3c1c290e64c4b92e11218211603&days=9&q=40.2434406,-75.26954539776581&aqi=no`;
-    // const forecast = `http://api.weatherapi.com/v1/forecast.json?key=b4b3c1c290e64c4b92e11218211603&days=9&q=${lat},${long}&aqi=no`;
     const response = await fetch(forecast);
     const data = await response.json();
     this.setState({
