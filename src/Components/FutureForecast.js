@@ -4,9 +4,7 @@ import React, { Component } from "react";
 import Tomorrow from "./Tomorrow";
 import DayAfter from "./DayAfter";
 class FutureForecast extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
       <div className="future-container">

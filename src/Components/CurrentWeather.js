@@ -5,9 +5,7 @@ import CurrentTemp from "./CurrentTemp";
 import HourlyTemp from "./HourlyTemp";
 
 class CurrentWeather extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
       <div className="current-container">
