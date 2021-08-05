@@ -8,11 +8,12 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      position: this.props.position,
       loading: true,
       current: null,
       hourly: null,
-      lat: null,
-      long: null,
+      lat: this.props.position.coords.latitude,
+      long: this.props.position.coords.longitude,
       tomorrow: null,
       dayAfter: null,
       location: null,
@@ -20,19 +21,7 @@ class Main extends Component {
   }
 
   async componentDidMount() {
-    if ("geolocation" in navigator) {
-      console.log("Available");
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.setState({
-          long: position.coords.longitude,
-          lat: position.coords.latitude,
-        });
-      });
-    } else {
-      console.log("Not Available");
-    }
-
-    const forecast = `http://api.weatherapi.com/v1/forecast.json?key=b4b3c1c290e64c4b92e11218211603&days=9&q=40.2434406,-75.26954539776581&aqi=no`;
+    const forecast = `http://api.weatherapi.com/v1/forecast.json?key=b4b3c1c290e64c4b92e11218211603&days=9&q=${this.state.long},${this.state.lat}&aqi=no`;
     const response = await fetch(forecast);
     const data = await response.json();
     this.setState({
