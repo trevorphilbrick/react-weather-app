@@ -21,7 +21,7 @@ class Main extends Component {
   }
 
   async componentDidMount() {
-    const forecast = `http://api.weatherapi.com/v1/forecast.json?key=b4b3c1c290e64c4b92e11218211603&days=9&q=${this.state.long},${this.state.lat}&aqi=no`;
+    const forecast = `http://api.weatherapi.com/v1/forecast.json?key=b4b3c1c290e64c4b92e11218211603&days=9&q=${this.state.lat},${this.state.long}&aqi=no`;
     const response = await fetch(forecast);
     const data = await response.json();
     this.setState({
